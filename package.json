@@ -1,0 +1,23 @@
+{
+  "name": "Template--Engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwclark90/Template--Engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwclark90/Template--Engine/issues"
+  },
+  "homepage": "https://github.com/bwclark90/Template--Engine#readme",
+  "dependencies": {
+    "inquirer": "^8.1.0"
+  }
+}
