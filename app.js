@@ -4,7 +4,7 @@ const Intern = require("./lib/Intern")
 const {prompt} = require("inquirer")
 const path = require("path")
 const fs = require("fs")
-const input = []
+let input = []
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html")
 
@@ -88,26 +88,26 @@ prompt([
 const askToContinue = () => {
   prompt([
     {
-      type: 'list',
-      name: 'message',
+      type: 'confirm',
+      name: 'cont',
       message: 'do you want to continue',
-      choices: ['yes', 'no']
 
     }
   ])
-  .then(answers =>{
-    if(answers.message == yes) {
+    .then(({ cont }) => {
+      if (cont)  {
       createEmployee()
     }
     else {
 quit()
     }
   })
-  
+.catch(err => console.log(err))
 }
 const quit = () => {
   console.log('goodbye')
-  // render() 
+  console.log(input)
+  fs.writeFileSync(path.join(__dirname, 'output', 'index.html' ), render(input))
 }
 createEmployee()
 
